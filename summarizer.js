@@ -1,4 +1,8 @@
+
+
 function summarize(input) {
+
+	input = input.substring(10);
 
 	input = input.replace(/ /g,"_");
 

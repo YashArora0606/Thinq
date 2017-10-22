@@ -1,7 +1,10 @@
 const axios = require('axios')
 const appid = '736bbe5d8a6cc6ec2ebc1138ab70c706'
 
+
 const getWeather = (q) => {
+
+  q.substring(q.toLowerCase().indexOf("weather in ") + 11)
     return axios.get('http://api.openweathermap.org/data/2.5/weather', {
       params: {
         q,
