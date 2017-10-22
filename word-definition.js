@@ -1,8 +1,8 @@
-
-let input = "outstanding";
-
 var wd = require("word-definition");
- 
-wd.getDef(input, "en", null, function(definition) {
-    console.log("Definition of " + input + ": " + definition.definition);
-});
+
+module.exports = input => {
+  input = input.substring(7)
+  return new Promise((resolve, reject) =>
+  wd.getDef(input, "en", null, resolve))
+  .then(({ word, definition }) => ((definition) ? `Definition of ${word}: ${definition}` : null))
+}

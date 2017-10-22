@@ -7,6 +7,7 @@ const weather = require('./weather')
 const directions = require('./directions')
 const wolfram = require('./wolfram');
 const news = require('./news');
+const define = require('./word-definition');
 
 const app = express()
 app.use(bodyParser.urlencoded({ extended: true }))
@@ -16,7 +17,11 @@ app.post('/sms', (req, res) => {
 
   const userInput = req.body.Body.toLowerCase()
 Promise.resolve().then(function (){
-	if (userInput.indexOf("summarize") >= 0 || userInput.indexOf("summary") >= 0) {
+  if (userInput.indexOf("define") >= 0) {
+
+     return define(userInput);
+
+ } else if (userInput.indexOf("summarize") >= 0 || userInput.indexOf("summary") >= 0) {
 
   		return summarizer(userInput);
 
