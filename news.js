@@ -1,4 +1,6 @@
-function news(input) {
+
+
+function news() {
 
   const axios = require("axios");
   const NEWS_API_KEY = "9845463cdc6b4e00ac2444b904710617";
@@ -10,12 +12,19 @@ function news(input) {
 		},
 	})
 	.then(result => {
-    for (var i = 0; i < 3; i++) {
+
+    let output;
+    let finalOutput = "";
+
+    for (let i = 0; i < 3; i++) {
       output = result.data.articles[i].title;
       if (output === undefined) {
   			output = "Unfortunately, I wasn't able to find information on that subject.";
   		}
-      return output
+      finalOutput += output + "\n\n";
     }
+    return finalOutput;
 	})
 }
+
+news().then(result => console.log(result));
