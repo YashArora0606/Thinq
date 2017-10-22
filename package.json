@@ -1,0 +1,29 @@
+{
+  "name": "smsearch",
+  "version": "1.0.0",
+  "description": "Free internet over SMS",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lokhinw/smsearch.git"
+  },
+  "keywords": [
+    "sms",
+    "web",
+    "twilio"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lokhinw/smsearch/issues"
+  },
+  "homepage": "https://github.com/lokhinw/smsearch#readme",
+  "dependencies": {
+    "express": "^4.16.2",
+    "twilio": "^3.9.0"
+  }
+}
