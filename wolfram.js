@@ -1,5 +1,5 @@
 const axios = require('axios')
-const appid = 'AK7VHR-KYT34TQ9EK'
+const appid = 'XVP98A-LKA3J7Q578'
 
 module.exports = (i) => axios.get('http://api.wolframalpha.com/v1/result', {
     params: {
