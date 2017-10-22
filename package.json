@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/lokhinw/smsearch#readme",
   "dependencies": {
+    "body-parser": "^1.18.2",
     "express": "^4.16.2",
     "twilio": "^3.9.0"
   }
