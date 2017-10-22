@@ -4,7 +4,9 @@ const MessagingResponse = require('twilio').twiml.MessagingResponse
 const bodyParser = require('body-parser')
 const summarizer = require('./summarizer')
 const weather = require('./weather')
-// const directions = require('./directions')
+const directions = require('./directions')
+const wolfram = require('./wolfram');
+const news = require('./news');
 
 const app = express()
 app.use(bodyParser.urlencoded({ extended: true }))
@@ -12,7 +14,7 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.post('/sms', (req, res) => {
   const twiml = new MessagingResponse()
 
-
+  const userInput = req.body.Body
 Promise.resolve().then(function (){
 	if (userInput.indexOf("summarize") >= 0 || userInput.indexOf("summary") >= 0) {
 
@@ -26,8 +28,15 @@ Promise.resolve().then(function (){
 
   		return weather(userInput);
 
-}})
-  
+  } else if (userInput.indexOf("news") >= 0) {
+
+  		return news();
+
+  } else {
+      return wolfram(userInput)
+  }
+})
+
 
   .then(result => twiml.message(result))
   .then(() => res.writeHead(200, {'Content-Type': 'text/xml'}))

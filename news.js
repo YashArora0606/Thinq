@@ -1,6 +1,4 @@
-
-
-function news() {
+module.exports = function() {
 
   const axios = require("axios");
   const NEWS_API_KEY = "9845463cdc6b4e00ac2444b904710617";
@@ -26,5 +24,3 @@ function news() {
     return finalOutput;
 	})
 }
-
-news().then(result => console.log(result));
