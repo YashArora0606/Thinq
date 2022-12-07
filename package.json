@@ -25,7 +25,7 @@
   "dependencies": {
     "axios": "^0.17.0",
     "body-parser": "^1.18.2",
-    "express": "^4.16.2",
+    "express": "^4.17.3",
     "node": "^11.9.0",
     "twilio": "^3.9.0",
     "word-definition": "^2.1.6"
